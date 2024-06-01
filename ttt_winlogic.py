@@ -1,7 +1,3 @@
-game = [[1, 1, 1],
-        [0, 0, 0],
-        [1, 0, 1]]
-
 '''
 win conditions: -
 1. horizontally
@@ -9,6 +5,20 @@ win conditions: -
 3. diagonally
 '''
 
+game = [[1, 2, 1],
+        [2, 0, 1],
+        [1, 0, 1]]
+
+for col in range(len(game)):
+    check = []
+
+    for row in game:
+        check.append(row[col])
+        
+    if check.count(check[0]) == len(check) and check[0] != 0:
+        print("winner!")
+
+'''
 def win(current_game):
     for row in current_game:
         print(row)
@@ -16,3 +26,4 @@ def win(current_game):
             print("Winner!")
 
 win(game)
+'''
