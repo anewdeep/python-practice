@@ -5,10 +5,19 @@ win conditions: -
 3. diagonally
 '''
 
-game = [[1, 2, 1],
-        [2, 0, 1],
-        [1, 0, 1]]
+game = [[2, 2, 1],
+        [2, 2, 1],
+        [1, 0, 2]]
 
+diags = []
+for col, row in enumerate(reversed(range(len(game)))):
+    diags.append(game[row][col])
+
+diags = []
+for index in range(len(game)):
+    diags.append(game[index][index])
+
+'''
 for col in range(len(game)):
     check = []
 
@@ -17,6 +26,7 @@ for col in range(len(game)):
         
     if check.count(check[0]) == len(check) and check[0] != 0:
         print("winner!")
+'''
 
 '''
 def win(current_game):
